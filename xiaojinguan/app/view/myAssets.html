@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="myassets">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class='title'>我的资产</h1>
+            </header>
+            <div id="assetsItems"></div>
+            <script id="assets-template" type="text/template">
+                <svg viewBox="0 0 640 440">
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ffffff" fill="none"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ff9394" fill="none" stroke-dasharray="0 1069"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ffb74d" fill="none" stroke-dasharray="0 1069"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#75aef5" fill="none" stroke-dasharray="0 1069"></circle>
+                  <!--   <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ff9394" fill="none" stroke-dasharray="0 1069"></circle> -->
+                </svg>
+                <div class="assetsTotal">
+                    <span class="totalTit">总资产(元)</span>
+                    <span class="totalNum"><%=newtotalAssets%></span>
+                </div>
+                <div class="totalLists">
+                    <div class="totalList">
+                        <div class="list listR"></div>
+                        <span class="listLeft">申购成功金额</span>
+                        <span class="listRight"><%=newsgSuccessBalance%></span>
+                    </div>
+                    <div class="totalList">
+                        <div class="list listY"></div>
+                        <span class="listLeft">在途金额</span>
+                        <span class="listRight"><%=newztBalance%></span>
+                    </div>
+                    <div class="totalList">
+                        <div class="list listO"></div>
+                        <span class="listLeft">申请中金额</span>
+                        <span class="listRight"><%=newsgzBalance%></span>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

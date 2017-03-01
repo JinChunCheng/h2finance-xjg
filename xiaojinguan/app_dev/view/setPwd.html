@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+
+<body>
+    <div class="page-group">
+        <div class="page" id="setpwd-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/home.html" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">设置资金密码</h1>
+            </header>
+            <div class='update-pwd content native-scroll no-scroll-x'>
+                <div class="show-mobile">
+                    
+                </div>
+                <div class='list-block insert-paswd'>
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content old-pwd">
+                                <div class="item-media"><img class = "wh-1" src="img/lock.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input"> 
+                                        <input  class="pwd" type="password" placeholder="设置6-12位字母或数字组成的密码" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content confirm-pwd">
+                                <div  class="item-media "><img class="wh-1" src="img/conPwd.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input class="confirm-password" type="password" placeholder="再次确认登录密码" class="" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="insert-code">
+                    <span><img class="wh-1" src="img/draw.png"></span>
+                    <span><input class="verify"  type='number' placeholder="请输入校验码"></span>
+                    <button class="send-code">发送校验码</button>
+                </div>
+                <div class="footer-warp">
+                    <div class="big-btn send-pwd" disabled>完成</div>
+                </div>
+            </div>
+        </div>
+        <script id="show-mobile" type="text/template">
+            <span><img class="wh-1" src="img/mobile.png"></span><span>手机号</span><span ><%=dataFormat('num',mobile)%></span>
+            <input type="hidden" id = "phone-num" value = "<%=mobile%>">
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

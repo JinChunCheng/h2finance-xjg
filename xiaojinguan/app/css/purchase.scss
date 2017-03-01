@@ -1,0 +1,487 @@
+/*==========================添加银行卡================================================*/
+
+#addcard-ctt {
+    .item-content {
+        .item-input {
+            text-align: right;
+            input {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.cardDetail-content {
+    .owner-message {
+        .item-inner {
+            height: 4.4rem;
+            font-size:1.5rem;
+            .item-input{
+                color:#000000;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.card-message {
+    margin: 2rem 0;
+    height: 6rem;
+    background-color: #fdfdfd;
+    dl {
+        margin: 0;
+        padding: .75rem 1.5rem;
+        width: 100%;
+        background-color: #fff;
+    }
+    dt {
+        float: left;
+        line-height: 3.5rem;
+        img {
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-top: .5rem;
+        }
+    }
+    dd {
+        margin-left: 5rem;
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            margin-top: .5rem;
+            font-weight: normal;
+            color: #000;
+        }
+        span {
+            display: block;
+            margin: 0;
+            margin-top: .5rem;
+            padding: 0;
+            font-size: 1.3rem;
+            color: #8e8e93;
+        }
+    }
+}
+
+#carddetail-ctt,
+#invest-ctt {
+    .invest-describe {
+        padding: 0 1.5rem;
+        font-size: 1.1rem;
+        color: #8e8e93;
+    }
+    .invest-num {
+        padding: 0;
+    }
+    .total-amount {
+        color: #ff8f3b !important;
+    }
+    .list-block {
+        margin-top: .8rem;
+        .item-content {
+            padding: 0 0 0 1.5rem;
+            font-size: 1.5rem;
+            .item-inner {
+                height: 4.4rem;
+                line-height: 4.4rem;
+                color: #8e8e93;
+                span {
+                    color: #000;
+                    &.pre-profit {
+                        color: #ff8f3b;
+                    }
+                }
+            }
+            &:last-child {
+                .item-inner {
+                    border-bottom: none;
+                }
+            }
+            input {
+                text-align: left;
+                font-size: 1.5rem;
+                color: #000;
+            }
+        }
+    }
+    .insert-phone,.insert-code {
+        input { color: #000;}
+    }
+    .insert-code {
+        input { width: 45%;}
+    }
+    .card-code {
+        background-color: #fdfdfd;
+        button.sendCode {
+            border: none;
+            background: #fff;
+            float: right;
+            text-align: center;
+            margin-right: .6rem;
+            border-left: solid 1px #c8c7cc;
+            height: 1.6rem;
+            line-height: 1.2rem;
+            padding-left: .5rem;
+            color: #ff8f3b;
+        }
+        .item-content {
+            padding-left: .8rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            input {
+                text-align: left;
+            }
+        }
+        .phone {
+            .item-media {
+                padding-bottom: .3rem;
+                border-bottom: 1px solid #e7e7e7;
+            }
+            .item-inner {
+                margin-left: 0;
+                padding-left: .75rem;
+            }
+        }
+        .verify-code {
+            .item-inner {
+                width: auto;
+            }
+        }
+    }
+}
+
+
+/*=================银行卡认证=======================*/
+
+#card-identification .content-block-title {
+    margin: 1.8rem auto .6rem;
+    padding: 0 1.5rem;
+    white-space: normal;
+    line-height: 1.5rem;
+    color: #8e8e93;
+    font-size: 1.1rem;
+}
+
+.card-identify {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.card-identify .item-content {
+    padding-left: 1.5rem;
+}
+
+.card-identify input[type='text'],
+.card-identify input[type='number'] {
+    padding-left: 0;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.card-agree {
+    margin-top: 1.2rem;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    overflow: hidden;
+    clear: both;
+}
+
+.card-identify .item-inner {
+    height: 4.4rem;
+    line-height: 4.4rem;
+    .item-title.label {
+        width: 25%;
+        color: #8e8e93;
+    }
+}
+
+.card-identify .item-input span {
+    color: #000;
+}
+
+.agree-lf {
+    float: left;
+}
+
+.card-agree input[type="checkbox"]+.agree-ipt,
+.card-agree input[type="checkbox"]+.agree-buy {
+    margin-right: .3rem;
+    display: inline-block;
+    background-image: url(../img/chb.png);
+    background-size: 100% 100%;
+}
+
+.card-agree input[type="checkbox"]+.agree-ipt+span,
+.card-agree input[type="checkbox"]+.agree-buy+span {
+    vertical-align: middle;
+}
+
+.card-agree input[type="checkbox"]:checked+.agree-ipt,
+.card-agree input[type="checkbox"]:checked+.agree-buy {
+    background-image: url(../img/chba.png);
+    background-size: 100% 100%;
+}
+
+.agree-lf input[type="checkbox"] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+        -ms-appearance: none;
+         -o-appearance: none;
+            appearance: none;
+    display: none;
+}
+
+.agree-rt {
+    float: right;
+    a {
+        color: #8e8e93;
+        vertical-align: middle;
+    }
+}
+
+.identify-succeed {
+    padding: 2.2rem 1.5rem;
+    width: 100%;
+    height: 13rem;
+    background-color: #fff;
+    background-image: url(../img/deal-bg.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 10.25rem 10.85rem;
+    h3 {
+        margin: 0 0 2.2rem 0;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: normal;
+        color: #000;
+    }
+    p {
+        margin: 0 0 .6rem 0;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        color: #8e8e93;
+        span {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+/*====================申购完成============================*/
+
+.invest-detail {
+    padding: 2rem 2rem 1.2rem;
+    background-color: #fff;
+    .invest-icon {
+        width: 27rem;
+        height: 4rem;
+        background-image: url(../img/succeed.png);
+        background-size: 27rem 4rem;
+    }
+    ul {
+        margin: 0;
+        padding-left: 0;
+        overflow: hidden;
+        clear: both;
+        li {
+            list-style: none;
+            float: left;
+            font-size: 1.1rem;
+            text-align: center;
+            //width: 6rem;
+            &:nth-child(2) {
+                margin-left: 4.5rem;
+            }
+            &:nth-child(3) {
+                margin-left: 4.5rem;
+            }
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                width: 1rem;
+                height: 1px;
+                background-color: #f2f2f2;
+            }
+            h3 {
+                margin: 0.5rem 0;
+                height: 1.1rem;
+                line-height: 1.1rem;
+                font-size: 1.1rem;
+                font-weight: normal;
+                color: #000;
+            }
+            p {
+                margin: 0;
+                height: 1.1rem;
+                line-height: 1.1rem;
+                color: #c8c7cc;
+            }
+        }
+    }
+}
+
+.invest-profit {
+    margin: 1rem 0 0;
+    background-color: #fff;
+    .item-title.label {
+        width: 45%;
+        font-size: 1.5rem;
+        color: #8e8e93;
+    }
+    .item-input {
+        text-align: right;
+        font-size: 1.5rem;
+        color: #000;
+    }
+    .item-inner {
+        padding-right: 1.5rem;
+    }
+    .item-content {
+        &:last-child {
+            .item-inner:after {
+                height: 0;
+            }
+        }
+    }
+}
+
+
+
+.mycard-content{
+    padding: 1rem 1rem 1rem 1rem;
+}
+.mycard-content .mycard-body{
+    margin-top: 0;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background-color: #ffffff;
+    border: 0.05rem solid #dddddd;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.mycard-content .mycard-body .mycard-title{
+    
+}
+.mycard-content .mycard-body .mycard-title .image{
+    float: left;
+    width: 1.7rem;
+    height: 1.7rem;
+    background: url('../images/des.png') no-repeat;
+    background-size: 1.7rem 1.7rem;
+}
+.mycard-content .mycard-body .mycard-title .des{
+    float: left;
+    color: #000;
+    font-size: 1.4rem;
+    margin-top: -0.2rem;
+    margin-left: 0.5rem;
+}
+.mycard-content .mycard-body .table{
+    margin-top: 1.1rem;
+}
+.mycard-content .mycard-body .table .mycard-title{
+    background-color: #fafafa;
+    border: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.mycard-content .mycard-body .table .mycard-title .left{
+    float: left;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 1.2rem;
+    color: #666;
+    width: 46%;
+}
+.mycard-content .mycard-body .table .mycard-title .right{
+    float: left;
+    width: 54%;
+    text-align: center;
+}
+.mycard-content .mycard-body .table .mycard-title .right .top{
+    font-size: 1.2rem;
+    color: #666;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-left: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.mycard-content .mycard-body .table .mycard-title .right .down{
+    /*border-left: 0.05rem solid #dddddd;*/
+    /*border-top: 0.05rem solid #dddddd;*/
+}
+.mycard-content .mycard-body .table .mycard-title .right .down div{
+    float: left;
+    text-align: center;
+    width: 50%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.1rem;
+    color: #666;
+    border-top: 0.05rem solid #dddddd;
+    border-left: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.mycard-content .mycard-body .infos{
+    
+}
+.mycard-content .mycard-body .infos .info{
+    height: 2.5rem;
+    border-bottom: 0.05rem solid #dddddd;
+    border-left: 0.05rem solid #dddddd;
+    border-right: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.mycard-content .mycard-body .infos .info span{
+    float: left;
+    font-size: 1.1rem;
+    color: #999;
+    text-align: center;
+    line-height: 2.5rem;
+}
+.mycard-content .mycard-body .infos .info .info-1{
+    width: 46%;
+}
+.mycard-content .mycard-body .infos .info .info-2{
+    width: 27%;
+    border-left: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.agreement {
+    padding: 1.5rem;
+    .agreement-title {
+        text-align: center;
+        font-size: 1.4rem;
+        color: #000;
+        font-weight: bold;
+    }
+    .agreement-content {
+        line-height: 2rem;
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 1.5rem;
+        .agreement-content-section {
+            margin-top: 1rem;
+            p {
+                margin: .5rem 0;
+            }
+        }
+        .agreement-content-subtitle {
+            font-size: 1.2rem;
+            color: #333;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="idx-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left" data-no-cache="true" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <a class="button button-link button-nav pull-right" href="/fundDetail.html" data-transition='slide-out'>
+                    <span class="icon-xq"></span>
+                </a>
+                <h1 class="title font-30">恒丰小金贯</h1>
+            </header>
+            <nav class="bar bar-tab bar-bottom-tab row no-gutter">
+                <a class="btn-bottom btn-bottom-lf col-50" href="authPurchase.html">更改授权</a>
+                <a class="btn-bottom btn-bottom-rt active col-50" href="javascript:void(0);">赎回</a>
+            </nav>
+            <div class="content pull-to-refresh-content" data-ptr-distance="55">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div id="cttItems"></div>
+            </div>
+        </div>
+        <script id="idx-template" type="text/template">
+            <div class="card card-common bg-index">
+                <div class="card-header line-no tc white my-profit-y">我的收益(元)</div>
+                <div class="card-content tc white my-profit-content">
+                    <span><%=profitYesterday%></span>
+                </div>
+            </div>
+            <div class="card card-common">
+                <div class="card-header">
+                    <div class="row w100p">
+                        <div class="col-50 bd-r profit-l">
+                            昨日收益
+                            <br>
+                            <span class="money-bg">+<%=profitPerTT%></span>
+                        </div>
+                        <div class="col-50 profit-r">
+                            万份收益
+                            <br>
+                            <span class="money-bg">+<%=profitTotal%></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content profit-trend">
+                    <div class="card-content-inner seven-profit">七日年化收益率(%)</div>
+                    <div></div>
+                </div>
+            </div>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

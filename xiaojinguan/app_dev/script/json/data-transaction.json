@@ -1,0 +1,5 @@
+{
+    "status": 200,
+    "msg": "",
+    "data": { "items": [{ "amount": 1000, "assetsType": "SY", "balance": 1200, "time": 12340098656000 }, { "amount": 1000, "assetsType": "ZT", "balance": 1200, "time": 12340098656000 }, { "amount": 1000, "assetsType": "SGZ", "balance": 1200, "time": 12340098656000 }, { "amount": 1000, "assetsType": "SH", "balance": 1200, "time": 12340098656000 }, { "amount": 1000, "assetsType": "ZT", "balance": 1200, "time": 12340098656000 }, { "amount": 1000, "assetsType": "SY", "balance": 1200, "time": 12340098656000 }] }
+}

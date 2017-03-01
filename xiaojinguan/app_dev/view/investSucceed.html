@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="invest-succeed">
+            <header class="bar bar-nav">
+                <!-- <a class="button button-link button-nav pull-left" data-no-cache="true" href="/home.html" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a> -->
+                <h1 class="title">投资申请成功</h1>
+            </header>
+            <div class="content" id="invest-success-content">
+            </div>
+        </div>
+        <script id="subscribe-template" type="text/template">
+            <div class="invest-detail">
+                <div class="invest-icon">
+                </div>
+                <ul>
+                        <li>
+                            <h3>今日投资</h3>
+                            <p>
+                                <%=currentDate%>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>开始计息</h3>
+                            <p>
+                                <%=profitDate%>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>可赎回</h3>
+                            <p>
+                                <%=profitDate%>
+                            </p>
+                        </li>
+                    </ul>
+            </div>
+            <div class="list-block invest-profit">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title label">投资金额</div>
+                        <div class="item-input">
+                            <span><%=amount%> 元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title label">预计年化收益</div>
+                        <div class="item-input">
+                            <span><%=profit%> 元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-warp content-block">
+                <div class="big-btn succeed">完成</div>
+            </div>
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

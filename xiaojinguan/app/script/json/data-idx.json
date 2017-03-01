@@ -1,0 +1,14 @@
+{
+    "status": 200,
+    "msg": "",
+    "data": {
+    	"uid": "599f9073ab936f04dcbe9e137f2c1c20",
+    	"user": {
+	        "title": "小金贯",
+	        "profitYesterday": "暂无收益",
+	        "profitTotal": "108.00",
+	        "totalAmount": "108.50",
+	        "profitPerTT": "54,000.00"
+    	}
+    }
+}

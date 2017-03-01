@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+<body>
+	<div class="page-group">
+        <div class="page" id="redeem-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">赎回</h1>
+            </header>
+            <div id="cardsItems" class='updatePwd content native-scroll no-scroll-x'>
+                
+            </div>
+        </div>
+        <div class="page" id="redeem-iptpwd-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">输入资金密码</h1>
+            </header>
+            <div class='updatePwd content native-scroll no-scroll-x'>
+                <div class='list-block'>
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content oldPwd">
+                                <div class="item-media"><img class='wh-1' src="images/lock.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input id="redeem-pwd" class="font-15 verifyIpt" type="password" placeholder="请输入资金密码，以验证身份">
+                                     </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-warp">
+                    <div id="redeem-dis" class="big-btn card-next pwd-verify" disabled>安全验证</div>
+                </div>
+                <div class="forgot-pwd">
+                    <a href="javascript:void(0);" data-no-cache="true">忘记密码？</a>
+                    <a class="find-pwd" href="setPwd.html" data-no-cache="true">找回</a>
+                </div>
+            </div>
+        </div>
+        <script id="cards-template" type="text/template">
+             <div id="cardsItems" class='updatePwd content native-scroll no-scroll-x'>
+                <div class = "content-block-title">资金赎回至</div>
+                <div class='list-block'>
+                    <div class="redeem-card">
+                        <a class="item-link" href="javascript:void(0);">
+                            <div class="item-inner">
+                                <dl>
+                                    <dt><img src="../images/bankImg/<%=bankCode%>.png" alt=""></dt>
+                                    <dd>
+                                        <h4><%=bankName%></h4>
+                                        <span>尾号<%=bankAccount%>储蓄卡</span>
+                                    </dd>
+                                </dl>
+                             </div>
+                        </a>
+                    </div>
+                    <div class = "content-block-title">
+                        <span>最多可赎回 <%=freeBalance%> 元</span>
+                        <!-- <a><img class="wh-2" src="../img/icon-what.png"><span>赎回说明</span></a> -->
+                    </div>
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content redeem-num">
+                                <div class="item-media">赎回金额</div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input id="redeem-amount" type="number" placeholder="请输入赎回金额">
+                                    </div>
+                                    <a class="redeem-all" href="javascript:void(0);">全部赎回</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block footer-warp">
+                    <div class="big-btn card-next confirm-redeem font-18" disabled>下一步</div>
+                </div>
+                <div class="footer-span">
+                    <span>由于基金产品合规要求,该产品仅支持同卡进出,</span>
+                    <span>如更改绑定银行卡需人工介入,请拨打客服电话:</span>
+                    <span><img class="wh-12" src="../img/icon-num.png"><a href="tel:10109888">10109888</a></span>
+                </div>
+            </div>
+        </script>
+    </div>
+	@@include('_template/_footer.tpl')
+</body>
+
+</html>

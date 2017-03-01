@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="transaction-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <a class="button button-link button-nav pull-right open-panel">
+                    <span class="icon-xq"></span>
+                </a>
+                <div>
+                    <h1 class="title font-30 create-actions">
+                        <span class="transaction-title">资产明细</span>
+                    </h1>
+                </div>
+            </header>
+            <div class="content pull-to-refresh-content no-top infinite-scroll infinite-scroll-bottom" data-ptr-distance="55" data-distance="1">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <!-- 下面是正文 -->
+                <div class="list-block media-list mg-no">
+                    <ul id="cttItems">
+                    </ul>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader" style="display: none;">
+                    <div class="preloader"></div>
+                </div>
+                <p class='message-no-data' style="display:none;">
+                    <img src="../img/no-data.png">
+                    <span>暂无数据</span>
+                </p>
+                <p class="no-more-data" style="display:none;">
+                    no more data...
+                </p>
+            </div>
+        </div>
+        <div class="panel panel-right panel-reveal theme-white" id="transaction-panel">
+            <div class="content-block">
+                <p>资金类别</p>
+            </div>
+            <div class="list-block mg-no">
+                <ul>
+                    <li>
+                        <a class="item-link item-content">
+                            <div class="item-media capital-all"><i></i></div>
+                            <div class="item-inner active" data-type=''>
+                                <div class="item-title">全部</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item-link item-content">
+                            <div class="item-media capital-road"><i></i></div>
+                            <div class="item-inner" data-type='S'>
+                                <div class="item-title">申购</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item-link item-content">
+                            <div class="item-media capital-ing"><i></i></div>
+                            <div class="item-inner" data-type='R'>
+                                <div class="item-title">赎回</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item-link item-content">
+                            <div class="item-media capital-profit"><i></i></div>
+                            <div class="item-inner" data-type='I'>
+                                <div class="item-title">收益</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-overlay"></div>
+        <script id="transaction-template" type="text/template">
+            <% _.each(collection, function(m) { %>
+                <li class='fund-li'>
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <%if(m.transactionType!="R"){%>
+                                    <div class="item-title">
+                                        <%=m.assetsTypeName%>
+                                    </div>
+                                    <div class="item-after">
+                                        <%=m.amount%>
+                                    </div>
+                                    <%} else{%>
+                                        <div class="item-title">
+                                            <%=m.assetsTypeName%>
+                                        </div>
+                                        <div class="item-after-green">
+                                            <%=m.amount%>
+                                        </div>
+                                        <%}%>
+                            </div>
+                            <div class="item-subtitle">
+                                <div class="pull-left">
+                                    <%=m.finishDatetime%>
+                                </div>
+                                <div class="pull-right">
+                                    服务费<%=m.serviceFee%>元
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <% }); %>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

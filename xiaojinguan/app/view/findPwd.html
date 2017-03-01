@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="updatepwd-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">修改资金密码</h1>
+            </header>
+            <div class='updatePwd content native-scroll no-scroll-x'>
+                <div class="showMobile">
+                    <span><img class='wh-1' src="images/mobile.png"></span><span>手机号</span><span>183****7753</span>
+                </div>
+                <div class="insertCode">
+                    <span><img class='wh-1' src="images/draw.png"></span>
+                    <span><input class="font-15 verify" placeholder="请输入校验码" type='number'></span>
+                    <button class="font-15 sendCode">发送校验码</button>
+                </div>
+                <div class="footer-warp">
+                    <div class="bigBtn sendPwd font-18">完成</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

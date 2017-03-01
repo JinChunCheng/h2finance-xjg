@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+
+<body>
+    <div class="page-group">
+        <div class="page" id="my-ctt">
+            <header class="bar bar-nav userProfit-header">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return-white"></span>
+                </a>
+                <h1 class="title font-30">个人中心</h1>
+            </header>
+            <div id="my-cttItems">
+
+            </div>
+        </div>
+        <script id="my-template" type="text/template">
+             <div id="myItems" class='userProfit-showDetail content native-scroll no-top no-scroll-x'>
+                <div class="my-top">
+                    <div class="my-top-first">
+                        <div class="my-top-first-title">总资产(元)</div>
+                        <div class="my-top-first-money"><%=totalAssets%></div>
+                    </div>
+                    <div class="my-top-second">
+                        <div class="my-top-position">
+                            <div class="my-top-second-left">
+                                <div class="my-top-second-title">昨日收益(元)</div>
+                                <div class="my-top-second-money"><%=yesterdayProfit%></div>
+                              </div>
+                            <div class="my-top-second-right">
+                                <div class="my-top-second-title">累计收益(元)</div>
+                                <div class="my-top-second-money"><%=yesterDaySum%></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="userCenter">
+                    <a class="user-fund" href="detail.html">
+                        <div>资产明细</div>
+                        <div><img class="go-arrows" src="images/arrow.png"></div>
+                    </a>
+                    <a class="user-account" href="/accountInfo.html">
+                        <div>账号信息</div>
+                        <div><img class="go-arrows" src="images/arrow.png"></div>
+                    </a>
+                    <%if(isSetPwd==0){%>
+                        <a class="user-settings" href='setPwd.html'>
+                            <div>设置资金密码</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%} else{%>
+                        <a class="user-settings" href='updatePwd.html'>
+                            <div>修改资金密码</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%}%>
+                    <%if(isBindBank=="0"){%>
+                        <a class="user-buy" href="cardIndent.html">
+                            <div>银行卡认证</div>
+                            <div>
+                                <img class="go-arrows" src="images/arrow.png">
+                            </div>
+                        </a>
+                    <%} else{%>
+                        <a class="user-buy" href='cardDetail.html'>
+                            <div>银行卡信息</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%}%>
+                    <a class="user-intro" href="about.html">
+                        <div>产品介绍</div>
+                        <div><img src="images/arrow.png"></div>
+                    </a>
+                </section>
+             </div>
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

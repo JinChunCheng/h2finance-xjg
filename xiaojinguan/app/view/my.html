@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="my-ctt">
+            <header class="bar bar-nav userProfit-header">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return-white"></span>
+                </a>
+                <h1 class="title font-30">个人中心</h1>
+            </header>
+            <div id="my-cttItems">
+
+            </div>
+        </div>
+        <script id="my-template" type="text/template">
+             <div id="myItems" class='userProfit-showDetail content native-scroll no-top no-scroll-x'>
+                <div class="my-top">
+                    <div class="my-top-first">
+                        <div class="my-top-first-title">总资产(元)</div>
+                        <div class="my-top-first-money"><%=totalAssets%></div>
+                    </div>
+                    <div class="my-top-second">
+                        <div class="my-top-position">
+                            <div class="my-top-second-left">
+                                <div class="my-top-second-title">昨日收益(元)</div>
+                                <div class="my-top-second-money"><%=yesterdayProfit%></div>
+                              </div>
+                            <div class="my-top-second-right">
+                                <div class="my-top-second-title">累计收益(元)</div>
+                                <div class="my-top-second-money"><%=yesterDaySum%></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="userCenter">
+                    <a class="user-fund" href="detail.html">
+                        <div>资产明细</div>
+                        <div><img class="go-arrows" src="images/arrow.png"></div>
+                    </a>
+                    <a class="user-account" href="/accountInfo.html">
+                        <div>账号信息</div>
+                        <div><img class="go-arrows" src="images/arrow.png"></div>
+                    </a>
+                    <%if(isSetPwd==0){%>
+                        <a class="user-settings" href='setPwd.html'>
+                            <div>设置资金密码</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%} else{%>
+                        <a class="user-settings" href='updatePwd.html'>
+                            <div>修改资金密码</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%}%>
+                    <%if(isBindBank=="0"){%>
+                        <a class="user-buy" href="cardIndent.html">
+                            <div>银行卡认证</div>
+                            <div>
+                                <img class="go-arrows" src="images/arrow.png">
+                            </div>
+                        </a>
+                    <%} else{%>
+                        <a class="user-buy" href='cardDetail.html'>
+                            <div>银行卡信息</div>
+                            <div>
+                                <img class='go-arrows' src='images/arrow.png'>
+                            </div>
+                        </a>
+                    <%}%>
+                    <a class="user-intro" href="about.html">
+                        <div>产品介绍</div>
+                        <div><img src="images/arrow.png"></div>
+                    </a>
+                </section>
+             </div>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

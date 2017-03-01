@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+
+<body>
+    <div class="page-group">
+        <div class="page" id="myassets">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class='title'>我的资产</h1>
+            </header>
+            <div id="assetsItems"></div>
+            <script id="assets-template" type="text/template">
+                <svg viewBox="0 0 640 440">
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ffffff" fill="none"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ff9394" fill="none" stroke-dasharray="0 1069"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ffb74d" fill="none" stroke-dasharray="0 1069"></circle>
+                    <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#75aef5" fill="none" stroke-dasharray="0 1069"></circle>
+                  <!--   <circle class="circle" cx="320" cy="220" r="150" stroke-width="30" stroke="#ff9394" fill="none" stroke-dasharray="0 1069"></circle> -->
+                </svg>
+                <div class="assetsTotal">
+                    <span class="totalTit">总资产(元)</span>
+                    <span class="totalNum"><%=newtotalAssets%></span>
+                </div>
+                <div class="totalList">
+                    <div class="list listR"></div>
+                    <span class="listLeft">申购成功金额</span>
+                    <span class="listRight"><%=newsgSuccessBalance%></span>
+                </div>
+                <div class="totalList">
+                    <div class="list listY"></div>
+                    <span class="listLeft">在途金额</span>
+                    <span class="listRight"><%=newztBalance%></span>
+                </div>
+                <div class="totalList">
+                    <div class="list listO"></div>
+                    <span class="listLeft">申请中金额</span>
+                    <span class="listRight"><%=newsgzBalance%></span>
+                </div>
+            </script>
+        </div>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

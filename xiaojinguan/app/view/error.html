@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="error-ctt">
+            <header class="bar bar-nav">
+                <h1 class="title font-30 create-actions">网络繁忙</h1>
+            </header>
+            <div class="content">
+                <div class="error-container">
+                    <div><img class="error-img" src="/images/error.png" alt=""></div>
+                    <div class="error-msg">
+                        <span>网络繁忙，请稍后再试<label id='error-code'></label></span>
+                        <p><a href="" id="error-back">点击返回</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

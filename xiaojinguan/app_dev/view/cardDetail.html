@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="cardDetail-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">银行卡信息</h1>
+            </header>
+            <div class="content cardDetail-content">
+                <!-- script insert -->
+                <!-- <div class="insert-phone">
+                    <span><img class="wh-1" src="images/mobile.png"></span>
+                    <span><input class="font-15 phone-num" type="text" placeholder="请输入手机号"></span>
+                </div>
+                <div class="insertCode">
+                        <span><img class="wh-1" src="images/draw.png"></span>
+                        <span><input class="font-15 verify" type="number" placeholder="请输入校验码"></span>
+                        <button class="font-15 sendCode">发送校验码</button>
+                </div>
+                <div class="footer-warp">
+                    <div class="bigBtn sendPwd font-18" disabled = "true">完成</div>
+                </div> -->
+            </div>
+            <div class="footer-span-card-detail">
+                <span>由于基金产品合规要求,该产品仅支持同卡进出,</span>
+                <span>如更改绑定银行卡需人工介入,请拨打客服电话:</span>
+                <span><img class="wh-12" src="./img/icon-num.png"><a class="underline" href="tel:10109888">10109888</a></span>
+            </div>
+        </div>
+        <script id="cardDetail-tpl" type="text/template">
+            <div class="card-message">
+                <dl>
+                    <dt>
+                        <img src="../images/bankImg/<%=bankCode%>.png" alt="">
+                    </dt>
+                    <dd>
+                        <h4><%=bankName%></h4>
+                        <span>尾号<%=bankAccount%>储蓄卡</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block owner-message">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label card-owner">持卡人</div>
+                            <div class="item-input">
+                                <%=name%>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label card-owner">身份证号</div>
+                            <div class="item-input">
+                                <%=idNo%>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label card-owner">预留手机号</div>
+                            <div class="item-input"><%=mobile%></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

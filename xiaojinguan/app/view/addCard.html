@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('_template/_header.tpl')
+</head>
+<body>
+	<div class="page-group">
+		<div class="page" id = "addcard-ctt">
+			<header class="bar bar-nav">
+				<a class="button button-link button-nav pull-left back" data-no-cache="true" data-transition="slide-out">
+					<span class="icon-return"></span>
+				</a>
+				<h1 class="title">添加银行卡</h1>
+			</header>
+			<div class="content">
+				<div class="content-block-title">您所填写的信息会经过加密处理，以避免信息泄露和额外扣款，请放心填写。</div>
+				<div class="list-block">
+					<ul>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">持卡人</div>
+								<div class="item-input">
+									<span>邱**</span>
+								</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">银行卡号</div>
+								<div class="item-input">
+									<input class="card-number" type="number" placeholder="请输入银行卡号">
+								</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">银行类型</div>
+								<div class="item-input">
+									<input class="card-type" type="text" disabled>
+								</div>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="content-block footer-warp">
+					<div class="bigBtn card-next" disabled>下一步</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@@include('_template/_footer.tpl')
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="redeem-succeed">
+            <header class="bar bar-nav">
+                <!-- <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a> -->
+                <h1 class="title font-30">赎回</h1>
+            </header>
+            <div class="content no-scroll-x" id="redeem-success-content">
+            </div>
+        </div>
+        <script id="tmp-redeem-success" type="text/template">
+            <div class="reedem-bg <%=reedemBg%>">
+                <span class="reedemSucc"><%=message%></span>
+                <span class="reedemTime"><%=date%></span>
+                <div class="finish-pre-amt">
+                    <span class="reedem-amt">赎回金额(元)</span>
+                    <span class="pre-amt"><%=amount%></span>
+                </div>
+            </div>
+            <div class="redeem-deal">
+                <p>注：具体到账时间以银行到账时间为准。</p>
+            </div>
+            <div class="footer-warp">
+                <a href="home.html">
+                    <div class="go-homepage big-btn font-18">返回主页</div>
+                </a>
+            </div>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

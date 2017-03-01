@@ -1,0 +1,19 @@
+{
+  "status": 200,
+  "msg": "",
+  "data": {
+    "totalAssets": "165776",
+    "sgSuccessBalance": "11111.22",
+    "ztBalance": "88444",
+    "sgzBalance": "12221.0",
+    "frozenBalance": "54000.00",
+    "totalProfit":"2574.06",
+    "yesterDaySum":"1430.8",
+    "waitProfit":"1143.26",
+    "totalAssets":"1111111", 
+    "yesterdayProfit":"111.11",
+    "yesterDaySum":"2222",
+    "isSetPwd":"0",
+    "isBindBank":"1"
+    }
+}

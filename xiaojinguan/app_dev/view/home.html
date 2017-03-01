@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+
+<body>
+    <div class="page-group">
+        <div class="page" id="home-ctt">
+            <header class="bar bar-nav">
+                <span class="button button-link button-nav pull-left back-to-app">
+                    <span class="icon-return"></span>
+                </span>
+                <a class="button button-link button-nav pull-right" href="/my.html" data-transition='slide-out'>
+                    <span class="icon-xq"></span>
+                </a>
+                <h1 class="title font-30">汇存钱</h1>
+            </header>
+            <nav class="bar bar-tab bar-bottom-tab row no-gutter"></nav>
+            <div class="content pull-to-refresh-content no-top" data-ptr-distance="55">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div id="cttItems"></div>
+            </div>
+        </div>
+        <script id="home-template" type="text/template">
+            <div id="block" class="card card-common bg-index">
+                <div class="card-header line-no tc white my-profit-y">昨日收益(元)</div>
+                <div class="card-content tc white my-profit-content">
+                    <span><%=dataFormat("money",yesterdayProfit)%></span>
+                </div>
+            </div>
+            <div class="card card-common seven-profit-card">
+                <div class="card-header">
+                    <div class="row no-gutter w100p">
+                        <a class="col-50 bd-r profit-l" href="/myAssets.html" data-transition='slide-out'>
+                            <div>总金额(元)</div>
+                            <div class="money-bg">
+                                <%=dataFormat("money",totalAssets)%>
+                            </div>
+                        </a>
+                        <a class="col-50 profit-r" href="/detail.html?type=I" data-transition='slide-out'>
+                            <div>万份收益</div>
+                            <div class="money-bg">+
+                                <%=moreIncome%>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-content profit-trend">
+                    <div class="card-content-inner seven-profit">七日年化收益率(%)</div>
+                    <div id="home_chart" class="seven-profit-chart"></div>
+                </div>
+            </div>
+        </script>
+        <script id="home-nav" type="text/template">
+            <%if(isRedeem=="0"){%>
+                <%if (isSetPwd == "0") {%>
+                    <a class="btn-bottom btn-bottom-lf col-100" href='setPwd.html'>申  购</a>
+                    <%}else if(isBindBank == '0'){%>
+                        <a class="btn-bottom btn-bottom-lf col-100" href='cardIndent.html'>申  购</a>
+                        <%}else {%>
+                            <a class="btn-bottom btn-bottom-lf col-100" href='invest.html'>申  购</a>
+                            <%}%>
+                                <%} else{%>
+                                    <%if (isSetPwd == "0") {%>
+                                        <a class="btn-bottom btn-bottom-lf col-50" href='setPwd.html'>申  购</a>
+                                        <%}else if(isBindBank == '0'){%>
+                                            <a class="btn-bottom btn-bottom-lf col-50" href='cardIndent.html'>申  购</a>
+                                            <%}else{%>
+                                                <a class="btn-bottom btn-bottom-lf col-50" href='invest.html'>申  购</a>
+                                                <%}%>
+                                                    <a class="btn-bottom btn-bottom-rt col-50" href='redeem.html'>赎  回</a>
+                                                    <%}%>
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

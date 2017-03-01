@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="account-dt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">帐号信息</h1>
+            </header>
+            <div class="content native-scroll no-top no-scroll-x">
+                <div class="content-block-title account-tip">此信息为实名认证，不可更改。</div>
+                <div class="list-block">
+                    <ul class="account-disable account-ul">
+                        <!--TEXT INPUTS-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script id="account-li" type="text/template">
+            <li>
+                <div class="item-content account-item">
+                    <div class="item-media account-name"><i></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">姓名</div>
+                        <div class="item-input">
+                            <%=nameMask%>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content account-item">
+                    <div class="item-media account-card"><i></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">身份证号</div>
+                        <div class="item-input">
+                            <%=idNoMask%>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content account-item">
+                    <div class="item-media account-phone"><i></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">钱盒手机号</div>
+                        <div class="item-input">
+                            <%=mobileMask%>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

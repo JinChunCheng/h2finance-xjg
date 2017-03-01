@@ -1,0 +1,163 @@
+.card-lists {
+  padding-left: .75rem; }
+
+#redeem-ctt .list-block .item-inner:after {
+  content: none; }
+
+.redeem-card .item-link .item-inner {
+  margin-bottom: 1.5rem;
+  background-color: #fff; }
+
+#redeem-ctt .content-block-title {
+  color: #8e8e93;
+  font-size: 1.1rem;
+  line-height: inherit;
+  margin: 2rem 1.5rem .8rem; }
+  #redeem-ctt .content-block-title a {
+    float: right;
+    color: #8e8e93; }
+    #redeem-ctt .content-block-title a span {
+      margin-left: .5rem;
+      vertical-align: middle; }
+
+.redeem-card dl {
+  margin: 0;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: #fff; }
+
+.redeem-card dt {
+  float: left;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 1.5rem; }
+
+.redeem-card dt > img {
+  width: 100%;
+  margin-top: .3rem; }
+
+.redeem-card dd {
+  margin-left: 2.77rem; }
+
+.redeem-card dd > h4 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: normal; }
+
+.redeem-card dd > span {
+  color: #c8c7cc;
+  display: block;
+  font-size: 1.4rem; }
+
+.redeem-num {
+  font-size: 1.5rem;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  padding-left: 1.5rem; }
+
+.redeem-num .item-input {
+  width: 60%; }
+
+.redeem-all,
+.redeem-all:hover {
+  font-size: 1.5rem;
+  color: #ff8e3a; }
+
+.footer-span {
+  margin: 10rem 0 6rem;
+  text-align: center;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #8e8e93; }
+  .footer-span span {
+    display: inline-block;
+    margin: 0; }
+  .footer-span span:last-child {
+    color: #ff8e3a;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 23.5rem; }
+  .footer-span .wh-12 {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: .5rem; }
+
+#redeem-ctt .footer-warp .big-btn {
+  background: #ff8f3b;
+  border-radius: .5rem;
+  width: auto;
+  height: 4.4rem;
+  color: #fff;
+  line-height: 4.4rem;
+  margin: 4rem auto .78rem;
+  text-align: center;
+  font-size: 1.7rem; }
+  #redeem-ctt .footer-warp .big-btn[disabled] {
+    background: #dcdcdc; }
+
+#redeem-ctt .list-block .item-link .item-inner {
+  background-image: none; }
+
+.list-block .item-content {
+  padding-left: 1.5rem; }
+
+.list-block .item-inner {
+  padding-right: 1.5rem; }
+
+.reedem-bg {
+  width: 100%;
+  background-color: #fff; }
+
+.reedem-bg1 {
+  background-image: url("/img/deal-bg.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 10rem 10rem; }
+
+.reedem-bg2 {
+  background-image: url("/img/deal-bg2.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 10rem 10rem; }
+
+.reedem-bg .reedemSucc {
+  margin: 1.8rem .6rem 0 1.5rem;
+  display: inline-block;
+  color: #000;
+  font-size: 1.5rem; }
+
+.reedem-bg .reedemTime {
+  display: block;
+  margin-left: 1.5rem;
+  color: #8e8e93; }
+
+.finish-pre-amt .reedem-amt {
+  color: #8e8e93;
+  margin-top: 1.5rem;
+  display: block;
+  font-size: 1rem; }
+
+.finish-pre-amt {
+  margin-left: 1.5rem;
+  padding-top: 0rem; }
+
+.pre-amt {
+  color: #ff8f3b;
+  font-size: 3rem;
+  display: block; }
+
+.redeem-deal {
+  padding-left: 1.5rem;
+  color: #8e8e93;
+  background: #fff;
+  line-height: 4.4rem;
+  height: 4.4rem;
+  margin: 2rem 0 4rem; }
+
+.go-homepage a {
+  color: #fff; }
+
+#redeem-amount {
+  font-size: 1.5rem; }

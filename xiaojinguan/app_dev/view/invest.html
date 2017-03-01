@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="invest-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left external" data-no-cache="true" href="/home.html" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">投资</h1>
+            </header>
+            <div class="content">
+                <div class="card-message">
+                </div>
+                <div class="invest-describe"></div>
+                <div class="list-block invest-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">投资金额</div>
+                                <div class="item-input">
+                                    <input type="number" class="invest-num" placeholder="请输入投资金额">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">手续费</div>
+                                <div class="item-input">
+                                    <span class="investment-fee">0.00</span> 元
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">扣款总额</div>
+                                <div class="item-input">
+                                    <span class="total-amount">0.00</span> 元
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">预计年化收益</div>
+                                <div class="item-input">
+                                    <span class="pre-profit">0.00</span> 元
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-warp content-block">
+                    <div class="big-btn card-next" disabled>下一步</div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="iptpwd-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">输入资金密码</h1>
+            </header>
+            <div class='updatePwd content native-scroll no-scroll-x'>
+                <div class='list-block'>
+                    <ul>
+                        <li>
+                            <div class="item-content oldPwd">
+                                <div class="item-media"><img class='wh-1' src="images/lock.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input class="verify-ipt" type="password" placeholder="请输入资金密码，以验证身份">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block footer-warp">
+                    <div id="#dis" class="big-btn card-next pwd-verify" disabled>安全验证</div>
+                    <div class="forgot-pwd">
+                        <a href="javascript:void(0);" data-no-cache="true">忘记密码？</a>
+                        <a class="find-pwd" href="setPwd.html" data-no-cache="true">找回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="card-message" type="text/template">
+            <dl>
+                <dt>
+                    <img src="images/bankImg/<%=bankCode%>.png" alt="银行图标">
+                </dt>
+                <dd>
+                    <h4><%=bankName%></h4>
+                    <span><%=bankAccount%></span>
+                </dd>
+            </dl>
+        </script>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>

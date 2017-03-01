@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('_template/_header.tpl')
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="invest-succeed">
+            <header class="bar bar-nav">
+                <h1 class="title">投资申请结果</h1>
+            </header>
+            <div class="content" id="invest-success-content">
+            </div>
+        </div>
+        <script id="subscribe-template" type="text/template">
+            <%if(code=='11003'){%>
+            <div class="reedem-bg reedem-bg2">
+                <span class="reedemSucc">投资申请处理中...</span>
+                <span class="reedemTime"><%=currentDate%></span>
+                <div class="finish-pre-amt">
+                    <span class="reedem-amt">投资金额(元)</span>
+                    <span class="pre-amt"><%=amount%></span>
+                </div>
+            </div>
+            <%} else{%>
+            <div>
+                <div class="invest-detail">
+                    <div class="invest-icon">
+                    </div>
+                    <ul>
+                        <li>
+                            <h3>今日投资</h3>
+                            <p><%=currentDate%></p>
+                        </li>
+                        <li>
+                            <h3>开始计息</h3>
+                            <p><%=profitDate%></p>
+                        </li>
+                        <li>
+                            <h3>可赎回</h3>
+                            <p><%=profitDate%></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block invest-profit">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">投资金额</div>
+                            <div class="item-input">
+                                <span><%=amount%> 元</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">预计年化收益</div>
+                            <div class="item-input">
+                                <span><%=profit%> 元</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+            <div class="footer-warp content-block">
+                <div class="big-btn succeed">完成</div>
+            </div>
+        </script>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

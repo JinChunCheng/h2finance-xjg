@@ -1,0 +1,322 @@
+/*====================我的资产==============================*/
+#myassets{
+    .bar{
+        border-bottom: 1px solid #e7e7e7;
+    }
+    #assetsItems{ 
+        background:#fff;
+        padding-top:4.4rem;
+        .circle{
+            transition: stroke-dasharray 1s;
+            -webkit-input-placeholder-moz-transition: stroke-dasharray 1s; 
+            -webkit-transition: stroke-dasharray 1s; 
+            -o-transition: stroke-dasharray 1s;  
+        }
+        @media screen and (min-width:320px){
+            .assetsTotal{
+                position: absolute;
+                top: 13rem;
+                //left: 7.2em;
+                width: 100%;
+                height: 5rem;
+                text-align: center;
+                .totalTit{
+                    display: block;
+                    font-size: 1.3rem;
+                    color: #8c8e93;
+                }
+                .totalNum{
+                    display: block;
+                    font-size: 1.7rem;
+                    color: #000;
+                }
+            }
+        }
+        @media screen and (max-width:321px){
+            .assetsTotal{
+                position: absolute;
+                top: 13rem;
+                //left: 5.7em;
+                width: 100%;
+                height: 5rem;
+                text-align: center;
+                .totalTit{
+                    display: block;
+                    font-size: 1.3rem;
+                    color: #8c8e93;
+                }
+                .totalNum{
+                    display: block;
+                    font-size: 1.7rem;
+                    color: #000;
+                }
+            }
+        }
+        .totalLists {
+            padding-top: 1.5rem;
+            background-color: #f2f2f2;
+        }
+        .totalList{
+            padding-right: 1.5rem;
+            height: 4.35rem;
+            padding-left: 1.5rem;
+            border-bottom:1px solid #e7e7e7;
+            background-color: #fff;
+            .list {
+                float: left;
+                margin-top: 1.8rem;
+                border-radius: .6rem;
+                width: .6rem;
+                height: .6rem;
+            }
+            .listR {
+                background: #ff9394;
+            }
+            .listY {
+                background: #ffb74d;
+            }
+            .listO {
+                background: #75aef5;
+            }
+            .listB {
+                background: #5ac8d8;
+            }
+            .listLeft {
+                float: left;
+                margin-left: 1.15rem;
+                font-size: 1.4rem;
+                color: #666;
+                height: 4.35rem;
+                line-height: 4.35rem;
+            }
+            .listRight {
+                float: right;
+                font-size: 1.4rem;
+                color: #000;
+                height: 4.35rem;
+                line-height: 4.35rem;
+            }
+        }
+        .totalLast{
+            border:none;
+        }
+    }
+}
+
+
+$capitalAllIcon: url(../images/capital.png);
+.capital-all>i,
+.capital-road>i,
+.capital-ing>i,
+.capital-profit>i,
+.capital-withdraw>i {
+    display: inline-block;
+    background-image: $capitalAllIcon;
+    background-size: 2.4rem 13rem;
+    background-repeat: no-repeat;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.capital-all>i {
+    background-position: 0 0;
+}
+
+.capital-ing>i {
+    background-position: 0 -2.6rem;
+}
+
+.capital-road>i {
+    background-position: 0 -5.3rem;
+}
+
+.capital-profit>i {
+    background-position: 0 -8rem;
+}
+
+.capital-withdraw>i {
+    background-position: 0 -10.75rem;
+}
+
+/*===================个人中心========================*/
+
+.userProfit-header {
+    background-color: #ff8f3b;
+    .title {
+        color: #fff !important;
+    }
+}
+
+.userProfit-header:after {
+    background-color: transparent;
+}
+
+.my-top {
+    height: 22.5rem;
+    padding-top: 4.4rem;
+    background-color: #ff8f3b;
+    .my-top-first {
+        height: 8.3rem;
+        padding-top: 2.5rem;
+        text-align: center;
+        .my-top-first-title {
+            font-size: 1.35rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        ;
+        .my-top-first-money {
+            //margin-top: .8rem;
+            color: #fff;
+            font-size: 3.5rem;
+            line-height: 3.8rem;
+        }
+    }
+    ;
+    .my-top-second {
+        height: 9.8rem;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        background: url("../img/userprofit-bg.png") no-repeat;
+        background-size: contain;
+        .my-top-second-title {
+            font-size: 1.35rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        ;
+        .my-top-second-money {
+            margin-top: 0.2rem;
+            color: #fff;
+            font-size: 2.1rem;
+            line-height: 2.1rem;
+        }
+        .my-top-position {
+            height: 8.3rem;
+            display: table-cell;
+            vertical-align: bottom;
+            width: 32rem;
+        }
+        ;
+        .my-top-second-left {
+            float: left;
+        }
+        ;
+        .my-top-second-right {
+            float: right;
+            text-align: right;
+        }
+        ;
+    }
+}
+
+#product-about-ctt {
+    padding-bottom: 4.4rem;
+}
+.about-banner {
+    background: #fff;
+    img {
+        width: 32rem;
+        height: 25.2rem;
+    }
+    .fund-description {
+        padding: 1.5rem 1.5rem 1.75rem 1.5rem;
+        font-size: 1.3rem;
+        color: #333;
+    }
+}
+
+.about-content {
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            padding: 1.1rem 1.5rem 1.75rem 1.5rem;
+            color: #8c8c92;
+            font-size: 1.2rem;
+            .about-content-title {
+                font-size: 1.5rem;
+                color: #ff7f39;
+                .about-icon {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    float: left;
+                    margin-top: .3rem;
+                }
+                .about-icon-flower {
+                    background: url(../images/flower.png) no-repeat;
+                    background-size: 1.5rem 1.5rem;
+                }
+                span {
+                    margin-left: .5rem;
+                }
+            }
+            .about-content-detail {
+                font-size: 1.2rem;
+                color: #8c8c92;
+                margin-top: 1.4rem;
+                p {
+                    margin: 0;
+                    line-height: 2.3rem;
+                }
+                .underline {
+                    font-size: 1.2rem;
+                    color: #333;
+                    text-decoration: underline;
+                }
+            }
+            .about-content-subtitle {
+                font-size: 1.2rem;
+                color: #333;
+                .about-subicon {
+                    float: left;
+                    margin-top: .1rem;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+                .about-subicon-question {
+                    background: url(../images/question-mark.png) no-repeat;
+                    background-size: 1.6rem 1.6rem;
+                }
+                .about-subicon-tips {
+                    background: url(../images/tips.png) no-repeat;
+                    background-size: 1.6rem 1.6rem;
+                }
+                span { margin-left: .5rem; }
+            }
+            .about-content-subdetail {
+                margin-top: 1rem;
+            }
+        }
+        li:nth-child(even) {
+            background: #fff;
+        }
+    }
+}
+.about-flow1 {
+    display: inline-block;
+    background: url(../images/num-01.png) no-repeat;
+    background-size: 1.7rem 1.7rem;
+    padding-left: 2.2rem;
+    margin-right: 4rem;
+}
+.about-flow2 {
+    display: inline-block;
+    background: url(../images/num-02.png) no-repeat;
+    background-size: 1.7rem 1.7rem;
+    padding-left: 2.2rem;
+    margin-right: 4rem;
+}
+.about-flow3 {
+    display: inline-block;
+    background: url(../images/num-03.png) no-repeat;
+    background-size: 1.7rem 1.7rem;
+    padding-left: 2.2rem;
+}
+.message-no-data {
+    img {
+        display: block;
+        width: 12rem;
+        margin-left: 10rem;
+    }
+    margin-top: 10rem;
+    text-align: center;
+}

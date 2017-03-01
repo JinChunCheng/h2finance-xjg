@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page" id="detail-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">修改每日申购金额</h1>
+            </header>
+            <div class="content paddind-b">
+                <div class="db-money-chose">
+                    <div class="desc font-15">请选择每日购买额度(元)</div>
+                    <div class="money-wrap row">
+                        <div class="money-div col-33">
+                            <span class="font-18 buy-amt">1000</span>
+                        </div>
+                        <div class="money-div col-33">
+                            <span class="font-18 buy-amt">3000</span>
+                        </div>
+                        <div class="money-div col-33">
+                            <span class="font-18 buy-amt">5000</span>
+                        </div>
+                    </div>
+                    <div class="money-wrap row">
+                        <div class="money-div col-33">
+                            <span class="font-18 buy-amt">10000</span>
+                        </div>
+                        <div class="money-div col-33">
+                            <span class="font-18 buy-amt">50000</span>
+                        </div>
+                        <div class="money-div-else col-33">
+                            <input placeholder="其他金额" class="font-18 buy-amt" type="number">
+                        </div>
+                    </div>
+                </div>
+                <div class="buy-wrap">
+                    <div class="warnings font-18">温馨提醒</div>
+                    <div class="predict font-10">预计8月30日产生收益，8月31日收益到账。</div>
+                    <div class="buy-desc">
+                        <p class="font-10">1.每月从交易流水中扣除相应金额购买理财产品</p>
+                        <p class="font-10">2.购买成功第二个工作日开始赚取收益，同时可随时赎回</p>
+                        <p class="font-10">3.当日交易流水不足购买金额时，将不购买理财产品</p>
+                    </div>
+                </div>
+                <div class="footer-warp">
+                    <div class="bigBtn apply-buy font-18">申请购买</div>
+                </div>
+                <div class="agreement-wrap">
+                    <div class="agree-checkbox">
+                        <input type="checkbox" class="agreement-check">
+                    </div>
+                    <div class="font-15">
+                        <span class='agree-text'>同意</span><span class="cashbox-agreement">网站服务协议</span>
+                    </div>
+                </div>
+                <div class="stop-wrap font-15">
+                    <span>停止购买</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

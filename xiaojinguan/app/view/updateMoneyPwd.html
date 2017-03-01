@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+
+<body>
+    <div class="page-group">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title font-30">修改每日申购金额</h1>
+            </header>
+            <div class='updatePwd content native-scroll no-scroll-x'>
+                <div class='list-block'>
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content oldPwd">
+                                <div class="item-media"><img class='wh-1' src="images/lock.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input class="font-15" type="password" placeholder="请输入资金密码，以验证身份">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-warp">
+                    <div class="bigBtn sendPwd font-18">安全验证</div>
+                </div>
+                <div class="forgot-pwd">
+                    <a href="javascript:void(0);">忘记密码？</a>
+                    <a class="find-pwd" href="javascirpt:void(0);">找回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('_template/_footer.tpl')
+</body>
+
+</html>

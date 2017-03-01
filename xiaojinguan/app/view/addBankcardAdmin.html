@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_template/_header.tpl')
+<body>
+<div class="page-group">
+    <div class="page" id="addBankcardAdmin-ctt">
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition='slide-out'>
+                <span class="icon-return"></span>
+            </a>
+            <h1 class="title font-30">添加银行卡</h1>
+        </header>
+        <div class='updatePwd content native-scroll no-scroll-x'>
+            <div class='list-block'>
+                <div class="redeem-card">
+                        <div class="bankCard">
+                            <dl>
+                                <dt><img src="../img/cmb_bank.png" alt=""></dt>
+                                <dd>
+                                    <h4>招商银行</h4>
+                                    <span>尾号9317储蓄卡</span>
+                                </dd>
+                            </dl>
+                        </div>
+                </div>
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">持卡人</div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input  class="font-15 pwd" type="password" placeholder="请输入持卡人姓名" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div  class="item-media ">银行卡号</div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input class="font-15 confirm-pwd" type="password" placeholder="请输入银行卡号" class="" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div  class="item-media ">手机号</div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input class="font-15 confirm-pwd" type="password" placeholder="请输入银行卡号" class="" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="insertCode">
+                <span><img class='wh-1' src="images/draw.png"></span>
+                <span><input  class="font-15 verify"  type='number' placeholder="请输入校验码"></span>
+                <button class="font-15 sendCode">发送校验码</button>
+            </div>
+            <div class="footer-warp">
+                <div class="bigBtn confirm-redeem font-18">完成</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@@include('_template/_footer.tpl')
+</body>
+
+</html>

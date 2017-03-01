@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汇存钱</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link rel="stylesheet" href="css/redeem.css">
+    <!-- endbuild -->
+</head>
+
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="card-identification">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left external" data-no-cache="true" href="/home.html" data-transition="slide-out">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">银行卡认证</h1>
+            </header>
+            <div class="content">
+                <div class="content-block-title">请输入与本人身份证信息一直的银行卡号，仅支持借记卡，设置后该卡为购买小金罐活期理财的申购卡和结算卡</div>
+                <div class="list-block card-identify">
+                </div>
+                <div class="card-agree">
+                    <span class="agree-lf">
+                        <input  type="checkbox" id="agree-ipt" checked><label  class="wh-2 agree-ipt" for="agree-ipt"></label>
+                        <span>同意<a href="javascript:void(0);" class="open-popup" data-popup="#withholding-agreement">《三方支付服务协议》</a></span>
+                    </span>
+                    <span class="agree-rt">
+                        <img class="wh-2" src="../img/icon-what.png">
+                        <a href="javascript:void(0)" class="open-popup" data-popup="#card-supported">支持银行及限额</a>
+                    </span>
+                </div>
+                <div class="content-block footer-warp">
+                    <div class="big-btn card-next" disabled>下一步</div>
+                </div>
+            </div>
+            <script id="card-identify" type="text/template">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">姓名</div>
+                            <div class="item-input">
+                                <span><%=dataFormat('name',name)%></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">身份证</div>
+                            <div class="item-input">
+                                <span><%=dataFormat('num',idcard)%></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">银行卡号</div>
+                            <div class="item-input">
+                                <input class="card-num" type="number">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </script>
+        </div>
+        <div class="page" id="carddetail-ctt">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" href="/" data-transition="slideout">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">银行卡认证</h1>
+            </header>
+            <div class="content">
+                <div class="bank-identify"></div>
+                <div class="list-block phone-code">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><img class="wh-1" src="img/mobile.png"></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input class="phone-num" type="number" placeholder="请输入银行预留手机号">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><img class="wh-1" src="img/draw.png"></div>
+                                <div class="item-inner">
+                                    <input class="verify" type="number" placeholder="填写手机校验码">
+                                    <button class="send-code">发送校验码</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-warp content-block">
+                    <div class="big-btn send-pwd font-18" disabled>下一步</div>
+                </div>
+            </div>
+            <script id="identify-message" type="text/template">
+                <div class="card-message">
+                    <dl>
+                        <dt>
+                            <img src="images/bankImg/<%=bankIcon%>.png" alt="银行图标">
+                        </dt>
+                        <dd>
+                            <h4><%=bankName%></h4>
+                            <span>尾号<%=bankNum%>储蓄卡</span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="list-block ">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">持卡人</div>
+                                <div class="item-input">
+                                    <span><%=dataFormat('name',name)%></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">身份证号</div>
+                                <div class="item-input">
+                                    <span><%=dataFormat('num',idcard)%></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </script>
+        </div>
+        <div class="page" id="card-bind">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-no-cache="true" data-transition="slide-out">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">银行卡认证</h1>
+            </header>
+            <div class="content">
+                <div class="identify-succeed">
+                    <h3>认证成功！</h3>
+                    <p>商户名称：<span>汇和金服</span></p>
+                    <p class="identify-time">认证时间：<span></span></p>
+                </div>
+                <div class="footer-warp content-block">
+                    <div class="big-btn succeed">完成</div>
+                </div>
+            </div>
+        </div>
+        <div class="page popup popup-about" id="card-supported">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left close-popup">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">银行卡说明</h1>
+            </header>
+            <div class="content mycard-content">
+                <!-- About Popup -->
+                <div class="content-block mycard-body">
+                    <div class="mycard-title clearfix">
+                        <span class="image"></span>
+                        <span class="des">支持绑定的银行卡及限额</span>
+                    </div>
+                    <div class="table">
+                        <div class="mycard-title clearfix">
+                            <div class="left">银行卡名称</div>
+                            <div class="right">
+                                <div class="top">限额</div>
+                                <div class="down">
+                                    <div>实时单笔</div>
+                                    <div>实时限额</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infos">
+                            <div class="info">
+                                <span class="info-1">工商银行</span>
+                                <span class="info-2">5万</span>
+                                <span class="info-2">5万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">农业银行</span>
+                                <span class="info-2">2万</span>
+                                <span class="info-2">2万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">中国银行</span>
+                                <span class="info-2">5万</span>
+                                <span class="info-2">50万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">建设银行</span>
+                                <span class="info-2">2万</span>
+                                <span class="info-2">2万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">兴业银行</span>
+                                <span class="info-2">5万</span>
+                                <span class="info-2">5万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">上海银行</span>
+                                <span class="info-2">5万</span>
+                                <span class="info-2">5万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">北京银行</span>
+                                <span class="info-2">5万</span>
+                                <span class="info-2">5万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">邮储银行</span>
+                                <span class="info-2">5000</span>
+                                <span class="info-2">5000</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">光大银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">无限额</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">民生银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">无限额</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">广发银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">无限额</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">中信银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">无限额</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">平安银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">100万</span>
+                            </div>
+                            <div class="info">
+                                <span class="info-1">重庆农商银行</span>
+                                <span class="info-2">50万</span>
+                                <span class="info-2">50万</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page popup popup-about" id="withholding-agreement">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left close-popup">
+                    <span class="icon-return"></span>
+                </a>
+                <h1 class="title">代扣协议</h1>
+            </header>
+            <div class="content">
+                <!-- About Popup -->
+                <div class="agreement">
+                    <div class="agreement-title">上海乾盒代扣服务协议</div>
+                    <div class="agreement-content">
+                        <div>
+                            《上海乾盒代扣服务协议》（以下简称“本协议”）是上海乾盒股份有限公司（以下简称“上海乾盒”）与上海乾盒用户（以下简称“用户”或“您”）就理财产品投资签约服务、银行卡充值代扣服务等相关事项所订立的有效合约。 用户在开启此功能之前，均应仔细阅读本协议，用户通过网络页或同意、点击勾选或正确输入支付密码，或通过其他方式选择接受本协议或实际使用投资产品签约服务、银行卡充值代扣等服务即表示用户同意接受本协议的全部内容。
+                        </div>
+                        <div>
+                            在同意接受本协议之前，请您仔细阅读本协议的全部内容，尤其是本协议加粗部分。若您对本协议条款有疑问或异议，请通过上海乾盒客户服务渠道（客服电话：10109888）进行询问，上海乾盒将为您解释相关条款内容。
+                        </div>
+                        <div>
+                            若您不同意协议的任何条款，或者无法准确理解上海乾盒对条款的解释，请不要进行后续操作。
+                        </div>
+                        <div>
+                            您承诺自己在使用上海乾盒提供的本服务时，实施的所有行为均遵守国家法律、法规和上海乾盒的相关规定，且不违背社会公共利益及公共道德。您利用本服务从事违法、犯罪活动或不正当交易产生的一切后果与责任，由您自行承担。如您不能清楚地知晓或理解国家相关法律法规规定的内容，您应当咨询相关法律专业人士后再决定是否接受本协议。若您径行使用本服务，则视为您已清楚知晓或理解国家相关法律法规规定的内容。
+                        </div>
+                        <div class="agreement-content-section">
+                            <div class="agreement-content-subtitle">第一条：签约账户授权</div>
+                            <p>
+                                1、您自愿申请使用上海乾盒理财产品服务，委托上海乾盒为您提供申购理财产品服务或委托上海乾盒对您申购时所使用银行借记卡进行扣款。
+                            </p>
+                            <p>2、您在此授权：</p>
+                            <p>
+                                （a）上海乾盒有权根据您填写的申购储蓄卡信息，采用本服务业务流程中所涉及的必要手段验证您享有该储蓄卡的所有权。上海乾盒有权因业务需要而单方变更业务流程，但需以短信或客户端提示信息方式通知您，该通知自发出之时起生效。
+                            </p>
+                            <p>
+                                （b）上海乾盒有权在相应时间（包括但不限于申购时）从您的储蓄卡中扣取相应款项用于申购理财产品，包括但不限于申购资金等。
+                            </p>
+                            <p>
+                                （c）上海乾盒有权在相应时间或在您主动在客户端触发申购或充值指令功能后从您的储蓄卡中扣取相应款项用于充值您在上海乾盒的虚拟账户。
+                            </p>
+                            <p>3、您保证：</p>
+                            <p>
+                                （a）您在使用本服务过程中提供的资料（包括但不限于已绑定的储蓄卡卡号、持卡人姓名、银行卡预留手机号、持卡人身份证号等信息）真实、准确、完整、有效。对于因您提供的信息不真实、不正确、不完整所造成的损失，由您自行承担。您必须正确填写相关页面信息，并且妥善保管上海乾盒因验证需要而给您提供的签约要素信息，除在上海乾盒办理业务时使用外，请勿向任何第三方（如：其他网站、电话或短信等）提供相关信息。
+                            </p>
+                            <p>
+                                （b）您在使用理财产品服务过程中，不违背储蓄卡发卡行的相关业务条款，且用于申购或充值的储蓄卡均应为您本人所有，您对该储蓄卡拥有完全的处分权，否则因此导致的责任均由您自行承担。
+                            </p>
+                            <p>
+                                4、您同意：上海乾盒有权基于更好地向您提供服务之目的或向您推广其他产品/服务的需要，保留并使用您在使用本服务过程中产生的相关数据信息，包括但不限于向其他第三方（如发卡行）提供该等信息。
+                            </p>
+                        </div>
+                        <div class="agreement-content-section">
+                            <div class="agreement-content-subtitle">第二条：签约账户扣款</div>
+                            <p>
+                                1、上海乾盒根据您输入的储蓄卡相关信息向您提供理财产品申购服务，您需保证该信息的真实性、准确性、完整性及及时性。若因储蓄卡相关信息有误，导致您遭受任何损失（包括但不限于经济损失等），均由您自行负责。
+                            </p>
+                            <p>
+                                2、上海乾盒根据您输入的储蓄卡相关信息发起充值服务指令，您需保证该信息的真实性、准确性、完整性及及时性。若因储蓄卡相关信息有误，导致上海乾盒充值不成功的，具体责任由您自行负责。
+                            </p>
+                            <p>
+                                3、若因上海乾盒过错导致您的理财产品申购不成功、充值不成功的，上海乾盒应对上述过错给您造成的经济损失承担责任。除此之外，上海乾盒不向您承担其他责任（包括但不限于其他损害承担任何间接、附带、特别、衍生性或惩罚性赔偿）。
+                            </p>
+                            <p>
+                                4、您在使用本服务的过程中，应确保您储蓄卡账户中有足额的款项用于申购理财产品或充值，若因您的储蓄卡账户款项不足，导致充值不成功等其他损失，须由您自行承担。
+                            </p>
+                            <p>
+                                5、上海乾盒在特定情形下（包括但不限于受您设置的储蓄卡付款额度限制、账户余额不足、储蓄卡账户状态异常或上海乾盒理财产品业务规则的限制等情形）可能无法正常向您提供申购或充值服务，由此给您造成的任何损失将由您自行承担。
+                            </p>
+                        </div>
+                        <div class="agreement-content-section">
+                            <div class="agreement-content-subtitle">第三条：签约账户变更</div>
+                            <p>
+                                1、您有权通过客服电话10109888对理财产品服务的签约申购储蓄卡或已绑定充值的储蓄卡进行变更设置，变更设置后的储蓄卡仍应满足本协议项下的要求，具体以用户页面公布的服务内容为准。
+                            </p>
+                            <p>
+                                2、因您更换储蓄卡的账户状态异常、账户余额不足等情况导致上海乾盒无法正常对理财产品申购进行扣款而产生的损失（包括但不限于利息等）由用户自行承担。
+                            </p>
+                            <p>
+                                3、若您成功变更设置上海乾盒理财产品签约申购服务或充值的账户，上海乾盒自您成功变更时起，按照您变更后的账户信息提供理财产品申购或充值扣款服务。
+                            </p>
+                            <p>
+                                4、您不可于上海乾盒正在操作申购时变更设置签约申购或充值账户，因用户提交变更设置账户请求时间不正确导致变更设置成功或不成功以及因此引起的申购赎回不成功或充值不成功等后果，由用户自行承担。
+                            </p>
+                        </div>
+                        <div class="agreement-content-section">
+                            <div class="agreement-content-subtitle">第四条：用户及上海乾盒义务</div>
+                            <p>
+                                1、您应对您使用本服务的行为负责，您在上海乾盒移动设备客户端点击确认申购或充值后，即表示您不可撤销的授权上海乾盒按照您的指令完成操作。您理解并同意，上海乾盒只是您的指令的执行者，除非上海乾盒没有依照您的指令进行操作，或操作指令错误，否则上海乾盒不对您的理财产品申购和充值服务产生的损失负责，该等损失由您自行承担。
+                            </p>
+                            <p>
+                                2、您应确保本服务运行的移动设备（包括但不限于智能手机、平板电脑、PDA及各类可运行本服务的移动设备）处于您的安全控制范围内，若因移动设备丢失或被盗用，而导致的任何责任及损失，应由您自行承担。
+                            </p>
+                            <p>
+                                3、您应确保本服务运行的移动设备（包括但不限于智能手机、平板电脑、PDA及各类可运行本服务的移动设备）的软件运行环境安全、若因移动设备软件环境中的病毒、恶意控件、后门漏洞或其余任何非上海乾盒客户端导致的软件漏洞，而导致的任何责任及损失，应由您自行承担。
+                            </p>
+                            <p>
+                                4、您不得以任何理由拒绝向上海乾盒支付基于理财产品服务所产生的应付款项。
+                            </p>
+                            <p>
+                                5、若您的工作、通讯地址、电话、身份证号码等信息变更时，您应当在前述信息变更之日起3日内通过客服方式与上海乾盒联系，并在规定时间内办理资料变更手续。否则，由于您未按照前述约定办理变更手续产生的损失由您自行承担。
+                            </p>
+                            <p>6、上海乾盒应负责在技术上确保本服务的安全、有效、正常运行，保证您顺利使用本协议约定服务。 </p>
+                            <p>
+                                7、上海乾盒有权根据自身业务的发展，增加、减少或撤销相关服务项目，终止提供本协议下的服务，对本协议条款进行修改，调整签约申购的内容及方式或者对本服务功能进行升级、维护和改造等。特别的，您同意上海乾盒有权将对您的债权转让给第三方，并通过（上海乾盒官方）网站或终端公告变动内容，自上海乾盒网站发出公告起即日内视为您已知晓上述变动。
+                            </p>
+                            <p>8、上海乾盒有权向您收取合理的服务手续费、并有权根据业务发展需要对服务费进行调整。 </p>
+                            <p>9、若您不接受本款项下的变更，您应立即停止使用本服务并终止本协议。若您继续使用本服务的，视为您同意接受相应的变更或调整。 </p>
+                            <p>10、在下述任一情况下，上海乾盒有权中止或终止向您提供理财产品申购服务或充值服务而不承担任何赔偿责任：</p>
+                            <p>（a）您利用本服务从事非法交易或不正当活动的；</p>
+                            <p>（b）上海乾盒基于单方判断，认为您已经违法本协议相关约定的；</p>
+                            <p>（c）上海乾盒发现您的注册资料或交易行为存在虚假、异常或可能违反相关法律、法规规定的。 </p>
+                            <p>11、无论本协议因任何原因中止或终止的，上海乾盒均不退回您基于使用本服务而支付给上海乾盒的服务手续费，但产品页面另有约定的除外。 </p>
+                            <p>12、本协议任何一方违反本协议规定的内容，给另一方造成损害的，应当承担违约责任，赔偿另一方因此而造成的损失，包括财产、名誉等损失。</p>
+                            <p>13、您同意，本协议适用中华人民共和国法律(不包括港、澳、台地区法律）。因上海乾盒与您就本协议的签订、履行或解释发生争议，双方应努力友好协商解决。若协商不成，由深圳仲裁委员会通过仲裁解决。
+                            </p>
+                            <p>本协议内容包括协议正文及所有上海乾盒已经发布的或将来可能发布的上海乾盒服务的使用规则。所有规定为本协议不可分割的一部分，与协议正文具有相同法律效力。您认可并同意：　若本服务协议中的某一部分条款或描述被相关司法机关判定为无效，该判定无效并不影响其他部分的有效性，您仍应依照本协议中的其他部分条款履行相关义务、行使相关权利。若您在本协议内容或相关附属规则发生修订后，继续使用上海乾盒代扣服务的，则视为您同意最新修订的协议内容；否则您须立即停止使用本服务。</p>
+                            <p>本协议自您勾选“同意上海乾盒代扣服务协议”之时生效。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- build:js js/app.min.js -->
+	<script src="lib/zepto/zepto.js"></script>
+	<script src="lib/echarts/echarts.min.js"></script>
+	<script src="lib/zepto/deferred.js"></script>
+	<script src="lib/zepto/callbacks.js"></script>
+	<script src="lib/sm/sm.js"></script>
+	<script src="lib/backbone/underscore-min.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/crypto/crypto-js.js"></script>
+	<script src="script/common/config.js"></script>
+	<script src="script/common/validate.js"></script>
+	<script src="script/service/cache-service.js"></script>
+	<script src="script/common/service-helper.js"></script>
+	<script src="script/service/test-service.js"></script>
+	<script src="script/controller/commonController.js"></script>
+	<script src="script/controller/home.js"></script>
+	<script src="script/controller/index.js"></script>
+	<script src="script/controller/detail.js"></script>
+	<script src="script/controller/settings.js"></script>
+	<script src="script/controller/subscribe.js"></script>
+	<script src="script/controller/setPwd.js"></script>
+	<script src="script/controller/updatePwd.js"></script>
+	<script src="script/controller/redeem.js"></script>
+	<script src="script/controller/cardIndent.js"></script>
+	<script src="script/controller/myAssets.js"></script>
+	<script src="script/controller/invest.js"></script>
+	<script src="script/controller/accountInfo.js"></script>
+	<script src="script/controller/my.js"></script>
+	<script src="script/controller/cardDetail.js"></script>
+	<script src="script/controller/error.js"></script>
+	
+	<!-- endbuild -->
+
+	<!-- 这段代码放在最后 -->
+	<script>$(function() { $.init(); });</script>
+	<script>
+		(function (doc, win) {
+		    var docEl = doc.documentElement;
+		    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		    var recalc = function () {
+		        var clientWidth = docEl.clientWidth;
+		        if (!clientWidth) return;
+		        if(clientWidth>=640){
+		            clientWidth=640;
+		        }
+		        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+		    };
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</body>
+
+</html>
