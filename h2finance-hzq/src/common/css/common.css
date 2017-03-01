@@ -1,0 +1,19 @@
+#app{
+	max-width:6.4rem;
+	margin:0 auto;
+	position:relative;
+	width:100%;
+	font-size:.12rem;
+	background: #efefef;
+}
+/*清除浮动*/
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+
+.msgbox { border-radius: .1rem !important; width: 5.2rem; }
+.msgbox-message { line-height: .45rem; }
+.msgbox-message p { color: #000; font-size: .26rem; }
+.msgbox-content { padding: .3rem; min-height: .36rem; }
+.msgbox-btns { height: .8rem; line-height: .8rem; }
+.msgbox-btn { line-height: .35rem; font-size: .28rem; }
+.pop-bounce-transition { transition: none; }

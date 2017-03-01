@@ -1,0 +1,21 @@
+/*! 
+*	标题:通用计算样式属性
+*	描述:变量属性一律单行注释 => //comment
+*　　　
+*/
+//全局最大宽度
+$custom-max-width:6.4rem;
+//顶部状态栏高度
+$status-bar-height:0rem;
+//距离底部导航高度
+$status-bottom:1.14rem;
+@mixin btn-commit {
+    border-radius: 1.72rem 1.72rem 1.72rem 1.72rem;
+	margin: 0 auto;
+	margin-bottom: .24rem;
+	text-align: center;
+	font-size: .28rem;
+}
+
+//全局设置边线宽度
+$public-border:1px;

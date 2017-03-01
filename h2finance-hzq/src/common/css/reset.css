@@ -1,0 +1,13 @@
+html{font-family: PingFangSC-Regular, "San Fransico","Microsoft YaHei","Heiti","DroidSans","DroidSansFallback","Helvetica Neue",Helvetica,"STHeiTi",Arial,sans-serif;
+height:100%;min-width:6.4rem;-webkit-tap-highlight-color:transparent}
+body{margin:0;padding:0;background:#efefef;color:#1c1b1a;-webkit-text-size-adjust:none;height:100%}
+ul,ol,li,form{margin:0;padding:0;-webkit-overflow-scrolling:touch}
+ul,ol{list-style:none}
+img{border:0}
+em,i,span{font-style:normal}
+h1,h2,h3,h4,div,li,p{margin:0;padding:0;font-weight:normal;-webkit-tap-highlight-color:transparent;-webkit-overflow-scrolling:touch;font-size:.12rem}
+input,select,textarea{-webkit-tap-highlight-color:transparent;margin:0;padding:0;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{outline:none}
+a{color:#1c1b1a;text-decoration:none}
+table{border-collapse:collapse;border-spacing:0}
+td,th{padding:0}
